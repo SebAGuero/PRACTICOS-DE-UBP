@@ -1,0 +1,4 @@
+Trabajo practico numero 4 - FFT
+
+Utilizar algun algoritmo de Transformada rapida de fourier (FFT), para mostrar el espectro de frecuencia de una señal que ingrese por puerto analogico del ESP32.
+No utilizar funciones propias de upython, construir la FFT mediante una funcion e implementarla.
