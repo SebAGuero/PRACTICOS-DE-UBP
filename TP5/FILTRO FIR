@@ -1,0 +1,33 @@
+TRABAJO PRACTICO NUMERO 5 - FILTRO DIGITAL FIR
+
+Se desea crear un Filtro FIR Orden 20, f=100Hz. Tambien debera mostrar el resultado del filtrado en una pantalla OLED.
+Construya los coeficientes del filtro FIR mediante matlab o mediante algun otro aplicativo, recordar que si el filtro es orden 20 el vector debe tener 21 coeicientes.
+
+# Características del filtro:
+# - Tipo: FIR no recursivo (no usa realimentación)
+# - Filtro pasabajos de fase lineal
+# - Orden: 20 (21 coeficientes)
+# - Ventana: Hamming (para suavizar los coeficientes y controlar el lobulo lateral)
+# - Frecuencia de corte (-3dB): 100 Hz
+# - Aproximación: no aplica (no es un filtro IIR ni aproximado)
+
+# Ecuación en diferencias:
+# y[n] = sumatoria de b[k]*x[n-k]
+
+# Puede usar una Señal compuesta por varias frecuencias (componentes espectrales)
+# Se suman senoidales de diferentes frecuencias y amplitudes:
+# 10, 20, 80, 120, 550, 800, 900, 1000 Hz
+# La idea es que el filtro pasabajos atenúe las frecuencias altas (mayores a 100 Hz)
+
+ejemplo:
+x = [
+    2.0 * math.sin(2 * math.pi * 10 * ti)   +  # frecuencia 10 Hz, amplitud 2
+    1.0 * math.sin(2 * math.pi * 60 * ti)   +  # etc...
+    1.0 * math.sin(2 * math.pi * 100 * ti)  +
+    0.9 * math.sin(2 * math.pi * 550 * ti)  +
+    0.9 * math.sin(2 * math.pi * 800 * ti)  +
+    0.9 * math.sin(2 * math.pi * 900 * ti)  +
+    0.9 * math.sin(2 * math.pi * 1000 * ti)
+    for ti in t
+]
+
